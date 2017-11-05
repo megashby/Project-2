@@ -5,11 +5,8 @@ var answers = Array();
 var myanswers = Array();
 
  
-function readTextFile(file)
-{
-
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
+    rawFile.open("GET", "./example.txt", false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
@@ -36,9 +33,9 @@ function readTextFile(file)
         choices[questionNum][1] = lines[5*questionNum+2];
         choices[questionNum][2] = lines[5*questionNum+3];
 
-        alert(choices[questionNum][0])
-        alert(choices[questionNum][1])
-        alert(choices[questionNum][2])
+        // alert(choices[questionNum][0])
+        // alert(choices[questionNum][1])
+        // alert(choices[questionNum][2])
 
         answers[questionNum] = lines[5*questionNum+4]
         alert(answers[questionNum])
@@ -48,8 +45,7 @@ function readTextFile(file)
         
 
    rawFile.send(null);
-}
-readTextFile("./example.txt")
+
 
 
 // myanswers[0] = lines[1];
