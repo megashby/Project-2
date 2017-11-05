@@ -2,8 +2,6 @@ var questions = Array();
 var choices = new Array();
 var answers = Array();
 
-var myanswers = Array();
-
  
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "./example.txt", false);
@@ -24,7 +22,7 @@ var myanswers = Array();
             }
         }
 
-    for (var questionNum = 0; questionNum <2; questionNum++){
+    for (var questionNum = 0; questionNum <6; questionNum++){
         questions[questionNum] = lines[5*questionNum];
         alert(questions[questionNum])
 
