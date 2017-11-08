@@ -8,13 +8,14 @@ function createQuiz() {
       document.writeln('<input type="radio" name="answer_'+i+'" value="'+choices[i][j]+'" id="answer_'+i +'_'+j+'" class="question_'+i+'" onclick="submitQuestion('+i+', this, \'question_'+i+'\')" /><label id="label_'+i+'_'+j+'" for="answer_'+i+'_'+j+'"> '+choices[i][j]+'</label><br />');
     }
   }
-  document.writeln('<p><input type="submit" value="Show Score" onclick="showTotalScore()" /></p><p style="display:none"></p>');
+  document.writeln('<p><input type="submit" value="Show Score" id= "ad_button" onclick="showTotalScore()" /></p><p style="display:none"></p>');
 }
 
 function submitQuestion(questionNum, obj, classNum) {
   useranswers[questionNum] = obj.value;
   disableQuestion(classNum);
   showResult(questionNum);
+  startAd();
 
 }
 function showResult(questionNum) {
@@ -54,4 +55,27 @@ function disableQuestion(classNum) {
   }
 }
 
+function moveToRandomLocation() {
+  var width = $(window).width() - $(this).width();
+  var randX = Math.floor(Math.random() * 1000);
+  var randY = Math.floor(Math.random() * 1000);
+  $(this).css({top: randX, left: randY});
+}
 
+function startAd() {
+  $("#annoying_ad").show().css({top: 0, left: 0});
+  $("#annoying_ad").mouseover(moveToRandomLocation);
+  $("#annoying_ad").mousemove(moveToRandomLocation);
+}
+
+// Starts jQuery event listeners (must be called after everything is loaded).
+function setupListeners() {
+  $("#ad_button").click(startAd);
+}
+
+// This function is automatically called when everything is done loading.
+$(document).ready(function() {
+  // $(".readmore").text("Read More");
+  // $(".details").hide();
+  setupListeners();
+});
