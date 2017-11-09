@@ -59,9 +59,9 @@ function disableQuestion(classNum) {
 
 function moveToRandomLocation() {
   var width = $(window).width() - $(this).width();
-  var randX = Math.floor(Math.random() * 1000);
-  var randY = Math.floor(Math.random() * 1000);
-  $(this).css({top: randX, left: randY});
+  var randX = Math.floor(Math.random() * 1100);
+  var randY = Math.floor(Math.random() * 400);
+  $(this).css({top: randY, left: randX});
 }
 
 function startAd() {
@@ -81,3 +81,6 @@ $(document).ready(function() {
   // $(".details").hide();
   setupListeners();
 });
+
+// shim layer with setTimeout fallback
+
