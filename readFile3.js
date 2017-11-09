@@ -2,7 +2,7 @@ var questions = Array();
 var choices = new Array();
 var answers = Array();
 
- 
+
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "./example.txt", false);
     rawFile.onreadystatechange = function ()
@@ -18,13 +18,13 @@ var answers = Array();
                 for (var i = 0; i < lines.length; i++){
                     // alert(lines[i])
                 }
-                alert(lines)
+                //alert(lines)
             }
         }
 
     for (var questionNum = 0; questionNum <6; questionNum++){
         questions[questionNum] = lines[5*questionNum];
-        alert(questions[questionNum])
+        //alert(questions[questionNum])
 
         choices[questionNum] = new Array();
         choices[questionNum][0] = lines[5*questionNum+1];
@@ -36,11 +36,11 @@ var answers = Array();
         // alert(choices[questionNum][2])
 
         answers[questionNum] = lines[5*questionNum+4]
-        alert(answers[questionNum])
+        //alert(answers[questionNum])
     }
 
-    }    
-        
+    }
+
 
    rawFile.send(null);
 
@@ -49,7 +49,7 @@ var answers = Array();
 // myanswers[0] = lines[1];
 // myanswers[1] = lines[2];
 // myanswers[2] = lines[3];
-                
+
 // alert(myanswers[0])
 
 // for (var key in myanswers){

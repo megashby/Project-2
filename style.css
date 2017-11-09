@@ -1,7 +1,26 @@
 body {
   font-family: "Verdana", "Geneva", "sans-serif";
+  background-image: url("https://78.media.tumblr.com/e7053a4e57b18d615379de49673d6b0e/tumblr_inline_ouuuhbvMRB1s2lhps_540.png");
+}
+h1 {
+    text-align: center;
+
+}
+h1 span {
+  color: blue;
+  font-size: 50px;
+  background-color: yellow;
+  border-style: solid;
+  border-color: red;
+}
+p span {
+  color: yellow;
+  background-color: blue;
+  border-style: solid;
+  border-color: red;
 }
 
+}
 #content {
   border: 2px dashed black;
   margin: 0 auto 0;

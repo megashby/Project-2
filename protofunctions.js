@@ -1,11 +1,13 @@
+
+
 var useranswers = Array();
 var correct = 0;
 
 function createQuiz() {
   for(i=0;i<questions.length;i++) {
-    document.writeln('<p class="question">'+questions[i]+' <p id="result_'+i+'"></p></p>');
+    document.writeln('<p  class="question"><span>'+questions[i]+' <p id="result_'+i+'"</span></p></p>');
     for(j=0;j<3;j++) {
-      document.writeln('<input type="radio" name="answer_'+i+'" value="'+choices[i][j]+'" id="answer_'+i +'_'+j+'" class="question_'+i+'" onclick="submitQuestion('+i+', this, \'question_'+i+'\')" /><label id="label_'+i+'_'+j+'" for="answer_'+i+'_'+j+'"> '+choices[i][j]+'</label><br />');
+      document.writeln('<p><span><input type="radio" name="answer_ '+i+'" value="'+choices[i][j]+'" id="answer_'+i +'_'+j+'" class="question_'+i+'" onclick="submitQuestion('+i+', this, \'question_'+i+'\')" /><label id="label_'+i+'_'+j+'" for="answer_'+i+'_'+j+'"> '+choices[i][j]+'</label><br /></span></p>');
     }
   }
   document.writeln('<p><input type="submit" value="Show Score" id= "ad_button" onclick="showTotalScore()" /></p><p style="display:none"></p>');
@@ -25,15 +27,15 @@ function showResult(questionNum) {
   var2 = String(answers[questionNum]).trim(' ')
 
   // alert(var1 === var2)
-  
+
   alert('did you answer correctly? '+(var1 ===var2))
   if(var1 === var2) {
     // alert('you got it correct')
   correct++;
   } else {
-    // alert('you got it incorrect')
+    //alert('you got it incorrect')
   }
-alert('your total number of correct questions are '+correct)
+//alert('your total number of correct questions are '+correct)
 }
 function showTotalScore() {
   totalQuestions = answers.length;
@@ -44,7 +46,7 @@ function showTotalScore() {
   for (i=0; i<alltags.length; i++) {
       alltags[i].disabled = false;
   }
-    } 
+    }
 
 function disableQuestion(classNum) {
   var alltags=document.all? document.all : document.getElementsByTagName("*")

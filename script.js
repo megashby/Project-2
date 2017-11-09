@@ -24,7 +24,7 @@ function readmoreClicked() {
 
 function showImageForProject(projectRow) {
   $(this).find(".project_image").stop(true).fadeIn("slow");
-  
+
 }
 
 function hideImageForProject(projectRow) {
@@ -56,7 +56,7 @@ function setupListeners() {
   $("#projects_table tr").hover(showImageForProject, hideImageForProject);
   $("#ad_button").click(startAd);
   $('#name_and_city').hover(changeColor, changeColor2);
-  
+
 }
 
 // This function is automatically called when everything is done loading.
