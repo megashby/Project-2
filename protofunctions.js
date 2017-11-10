@@ -26,17 +26,16 @@ function submitQuestion(questionNum, obj, classNum) {
 
 }
 function showResult(questionNum) {
-<<<<<<< Updated upstream
+
   // alert('the answer was '+answers[questionNum].toString())
   // alert('you answered '+useranswers[questionNum].toString())
   userAns = String(useranswers[questionNum]).trim(' ')
   sysAns = String(answers[questionNum]).trim(' ')
-=======
+
   //alert('the answer was '+answers[questionNum].toString())
   //alert('you answered '+useranswers[questionNum].toString())
   var1 = String(useranswers[questionNum]).trim(' ')
   var2 = String(answers[questionNum]).trim(' ')
->>>>>>> Stashed changes
 
   // alert(userAns === sysAns)
 
@@ -47,11 +46,11 @@ function showResult(questionNum) {
   } else {
     //alert('you got it incorrect')
   }
-<<<<<<< Updated upstream
+
 alert('your total number of correct questions: '+correct)
-=======
+
   /alert('your total number of correct questions are '+correct)
->>>>>>> Stashed changes
+
 }
 
 function showTotalScore() {
@@ -63,7 +62,7 @@ function showTotalScore() {
   for (i=0; i<alltags.length; i++) {
       alltags[i].disabled = false;
   }
-    } 
+    }
 
 function disableQuestion(classNum) {
   var alltags=document.all? document.all : document.getElementsByTagName("*")
