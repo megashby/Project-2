@@ -1,10 +1,18 @@
 body {
   font-family: "Verdana", "Geneva", "sans-serif";
-  background-image: url("https://78.media.tumblr.com/e7053a4e57b18d615379de49673d6b0e/tumblr_inline_ouuuhbvMRB1s2lhps_540.png");
+  background-image:url("https://78.media.tumblr.com/e7053a4e57b18d615379de49673d6b0e/tumblr_inline_ouuuhbvMRB1s2lhps_540.png");
+  text-align:center;
+  text-decoration: blink;
 }
 h1 {
     text-align: center;
 
+}
+
+
+
+.question {
+  font-size: 300%
 }
 h1 span {
   color: blue;
@@ -18,7 +26,7 @@ p span {
   background-color: blue;
   border-style: solid;
   border-color: red;
-}
+  font-size: 125%;
 
 }
 #content {
@@ -41,29 +49,6 @@ p span {
   padding: 10px;
 }
 
-.section table {
-  border-spacing: 0;
-  text-align: center;
-}
-
-.section table .project_image {
-  border: 2px solid green;
-  margin-top: 10px;
-  max-height: 125px;
-  max-width: 300px;
-}
-
-.section td, th {
-  border: 1px solid black;
-  margin: 0;
-  min-width: 150px;
-  padding: 10px;
-}
-
-.readmore {
-  color: blue;
-  font-size: 14px;
-}
 
 .details {
   border-top: 1px dashed grey;
