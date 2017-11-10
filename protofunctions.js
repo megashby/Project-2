@@ -1,42 +1,48 @@
-
-
 var useranswers = Array();
 var correct = 0;
 
 function createQuiz() {
-  for(i=0;i<questions.length;i++) {
-    document.writeln('<p  class="question"><span>'+questions[i]+' <p id="result_'+i+'"</span></p></p>');
-    for(j=0;j<3;j++) {
-      document.writeln('<p><span><input type="radio" name="answer_ '+i+'" value="'+choices[i][j]+'" id="answer_'+i +'_'+j+'" class="question_'+i+'" onclick="submitQuestion('+i+', this, \'question_'+i+'\')" /><label id="label_'+i+'_'+j+'" for="answer_'+i+'_'+j+'"> '+choices[i][j]+'</label><br /></span></p>');
+    for(q=0;q<questions.length;q++) {
+    document.writeln('<p  class="question"><span>'+questions[q]+' <p id="result_'+q+'"</span></p></p>');
+    for(a=0;a<3;a++) {
+      document.writeln('<p><span><input type="radio" name="answer_ '+q+'" value="'+choices[q][a]+'" id="answer_'+q +'_'+a+'" class="question_'+q+'" onclick="submitQuestion('+q+', this, \'question_'+q+'\')" /><label id="label_'+q+'_'+a+'" for="answer_'+q+'_'+a+'"> '+choices[q][a]+'</label><br /></span></p>');
     }
   }
-  document.writeln('<p><input type="submit" value="Show Score" id= "ad_button" onclick="showTotalScore()" /></p><p style="display:none"></p>');
+  document.writeln('<p><input type="submit" value="Show Score" class = "btn btn-info" id= "ad_button" onclick="showTotalScore()" /></p><p style="display:none"></p>');
 }
+//     for(i=0;i<questions.length;i++) {
+//     document.writeln('<p  class="question"><span>'+questions[i]+' <p id="result_'+i+'"</span></p></p>');
+//     for(j=0;j<3;j++) {
+//       document.writeln('<p><span><input type="radio" name="answer_ '+i+'" value="'+choices[i][j]+'" id="answer_'+i +'_'+j+'" class="question_'+i+'" onclick="submitQuestion('+i+', this, \'question_'+i+'\')" /><label id="label_'+i+'_'+j+'" for="answer_'+i+'_'+j+'"> '+choices[i][j]+'</label><br /></span></p>');
+// }
+//   }
+//   document.writeln('<p><input type="submit" value="Show Score" id= "ad_button" class = "btn btn-info" onclick="showTotalScore()" /></p><p style="display:none"></p>');
+// }
 
 function submitQuestion(questionNum, obj, classNum) {
   useranswers[questionNum] = obj.value;
   disableQuestion(classNum);
   showResult(questionNum);
-  startAd();
 
 }
 function showResult(questionNum) {
-  alert('the answer was '+answers[questionNum].toString())
-  alert('you answered '+useranswers[questionNum].toString())
-  var1 = String(useranswers[questionNum]).trim(' ')
-  var2 = String(answers[questionNum]).trim(' ')
+  // alert('the answer was '+answers[questionNum].toString())
+  // alert('you answered '+useranswers[questionNum].toString())
+  userAns = String(useranswers[questionNum]).trim(' ')
+  sysAns = String(answers[questionNum]).trim(' ')
 
-  // alert(var1 === var2)
+  // alert(userAns === sysAns)
 
-  alert('did you answer correctly? '+(var1 ===var2))
-  if(var1 === var2) {
+  // alert('did you answer correctly? '+(userAns ===sysAns))
+  if(userAns === sysAns) {
     // alert('you got it correct')
   correct++;
   } else {
     //alert('you got it incorrect')
   }
-//alert('your total number of correct questions are '+correct)
+alert('your total number of correct questions: '+correct)
 }
+
 function showTotalScore() {
   totalQuestions = answers.length;
   message = "You scored " + correct + " out of " + totalQuestions + "\n";
@@ -46,7 +52,7 @@ function showTotalScore() {
   for (i=0; i<alltags.length; i++) {
       alltags[i].disabled = false;
   }
-    }
+    } 
 
 function disableQuestion(classNum) {
   var alltags=document.all? document.all : document.getElementsByTagName("*")
