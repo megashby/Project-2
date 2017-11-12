@@ -9,8 +9,6 @@ h1 {
 
 }
 
-
-
 .question {
   font-size: 300%
 }
@@ -40,21 +38,4 @@ p span {
   height: 400px;
   position: absolute;
   width: 400px;
-}
-
-.section {
-  border: 1px dotted black;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  padding: 10px;
-}
-
-
-.details {
-  border-top: 1px dashed grey;
-  padding-top: 10px;
-}
-
-.highlighted {
-  box-shadow: 0px 0px 5px 5px grey;
 }
